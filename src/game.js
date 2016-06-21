@@ -63,8 +63,7 @@ var GameTile = React.createClass({
 					/*left*/
 					position.x = this.state.posX-50
 					break;
-			}
-			
+			}	
 			this.setState({
 				posX: position.x,
 				posY: position.y
@@ -86,7 +85,6 @@ var GameTile = React.createClass({
 			left: this.state.posX,
 			backgroundColor: this.props.color
 		}
-
 		return <div className="gameTile" style={style}></div>
 	}
 })
