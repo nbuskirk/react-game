@@ -4,7 +4,6 @@ var Game = React.createClass({
 	}
 })
 var Level = React.createClass({
-
 	drawTiles: function() {
 		var tiles = [
 			{ name: "sky", hex: "blue", posX: 0, posY:0 },
@@ -24,16 +23,17 @@ var Level = React.createClass({
 			{ name: "ground", hex: "green", posX: 200, posY: 100 },
 			{ name: "player", hex: "red", posX: 100, posY: 50 }
 		];	
+		//tiles.push({name:'test', hex:'orange', posX:0, posY:50});
 		return tiles.map(function(tile,i){
 			return <GameTile key={i} name={tile.name} color={tile.hex} posX={tile.posX} posY={tile.posY}/>
 		})
 	},
 	render: function() {
-			return ( 
-				<div>
-					{ this.drawTiles() }
-				</div> 
-			)
+		return ( 
+			<div>
+				{ this.drawTiles() }
+			</div> 
+		)
 	}
 })
 var GameTile = React.createClass({
@@ -44,10 +44,8 @@ var GameTile = React.createClass({
     	$(document.body).off('keydown', this.handleKeyDown);
     },
 	handleKeyDown: function(e){
-		console.log(e.keyCode)
 		if(this.state.isPlayer){
 			var position = {'x':this.state.posX,'y':this.state.posY};
-			
 			switch(e.keyCode){
 				case 39:
 					/*right*/
